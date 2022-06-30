@@ -11,7 +11,7 @@ blocks:
         - name: docker build
           commands:
             - checkout
-            - docker build -t $DOCKER_USERNAME/docker-cloud9 .
+            - docker build -t docker-cloud9 .
             - '# Define Version Numbers'
             - DATE=$(date +%y%U)
             - 'VERSION="1.0.${DATE}"'
