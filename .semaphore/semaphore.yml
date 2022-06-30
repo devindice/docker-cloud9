@@ -1,13 +1,14 @@
 version: v1.0
-name: Initial Pipeline
+name: Docker
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: 'Block #1'
+  - name: Build
     task:
       jobs:
-        - name: 'Job #1'
+        - name: docker build
           commands:
             - checkout
+            - docker build -t your-image .
