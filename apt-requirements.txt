@@ -1,0 +1,15 @@
+systemctl
+sudo
+git
+ruby
+locales-all
+tmux
+net-tools
+locate
+nodejs
+python2.7
+build-essential
+vim
+curl
+wget
+npm
