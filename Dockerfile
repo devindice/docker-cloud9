@@ -2,10 +2,6 @@
 #Download base image ubuntu 20.04
 FROM ubuntu:20.04
 
-ARG UNAME=ubuntu
-ARG UID=1000
-ARG GID=1000
-
 # Install ubuntu without interactions
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -18,15 +14,12 @@ RUN apt-get update
 RUN xargs apt-get install -y --no-install-recommends <apt-requirements.txt
 
 # Add user
-RUN groupadd -g $PGID -o $C9_USER
-RUN useradd -ms /bin/bash ubuntu
-RUN useradd -m -u $PUID -g $PGID -o -s /bin/bash $C9_USER
-
+RUN useradd -u 99 -ms /bin/bash ubuntu
 RUN adduser ubuntu sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Install from user
-USER $C9_USER
+USER ubuntu
 CMD /bin/bash
 
 # Clone and install cloud9 with sudo
