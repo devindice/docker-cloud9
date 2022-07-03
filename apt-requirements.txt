@@ -1,15 +1,25 @@
+# System Packages
 systemctl
 sudo
+net-tools
+locate
+vim
+curl
+wget
+lsb-release
+
+# Cloud9
 git
 ruby
 locales-all
 tmux
-net-tools
-locate
 nodejs
 python2.7
 build-essential
-vim
-curl
-wget
 npm
+
+# Docker
+ca-certificates
+gnupg
+    
+# App Specific
