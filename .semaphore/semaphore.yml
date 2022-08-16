@@ -11,10 +11,11 @@ blocks:
         - name: docker build
           commands:
             - checkout
+            - 'git clone --recursive https://github.com/fcwu/docker-ubuntu-vnc-desktop'
             - docker build -t docker-cloud9 .
             - '# Define Version Numbers'
             - DATE=$(date +%y%U)
-            - 'VERSION="1.0.${DATE}"'
+            - 'VERSION="${DATE}"'
             - '# Login to Dockerhub'
             - 'echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin'
             - '# Create a version'
